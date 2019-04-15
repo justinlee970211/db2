@@ -1,0 +1,66 @@
+<!doctype html>
+<title>噪音监测</title>
+<head>
+    <script src="https://cdn.staticfile.org/jquery/2.0.0/jquery.min.js"></script>
+    <script type="text/javascript" language="javascript">
+   		function update() {
+   			$.getJSON("/data/",function(data) {
+                $("#dbdata").html('<p>'+ data.db + data.date+'</p>');
+                if(data.db > 0 && data.db <= 55)
+                {
+
+                    $("#if").html('<p>当前环境良好</p>');
+                }
+                else if(data.db > 55 && data.db <= 60)
+                {
+
+                    $("#if").html('<p>当前环境噪声轻度污染</p>');
+                }
+                 else if(data.db > 60 && data.db <= 65)
+                {
+
+                    $("#if").html('<p>当前环境噪声中度污染</p>');
+                }
+                  else
+                {
+
+                    $("#if").html('<p>当前环境噪声重度污染</p>');
+                }
+
+
+   			});
+   		}
+   		function timeDown() {
+   			setTimeout(function() {
+   			    update();
+   			    timeDown();
+   		    }, 1000)
+   		}
+   		$(document).ready(function() {
+   			timeDown()
+
+        });
+
+</script>
+</head>
+<body>
+<p id="dbdata">
+Wait for data
+</p>
+<p id="if">
+
+</p>
+
+</body>
+{#{% if u %}#}
+{#{#    {% for i in u %}#}
+{#{#      <span>db ={{ i[1]}}</span>#}
+{#{#      <span>date ={{ i[2]}}</span>#}
+{#{#        <meta http-equiv="refresh" content="10">#}
+{#{#        <p></p>#}
+{#{#    {% endfor %}#}
+{#{##}
+{#{#{% else %}#}
+{#{#  <h1>Hello World!</h1>#}
+{#{#   <td db="{{dbdata}}">{{dbdata}}</td>#}
+{#{#{% endif %}#}

@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>用户登录</title>
+
+        <script src="https://cdn.staticfile.org/jquery/2.0.0/jquery.min.js"></script>
+        <!-- Bootstrap 核心 CSS 文件 -->
+        <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+        <style>
+            /*web background*/
+            .container{
+                display:table;
+                height:100%;
+            }
+
+            .row{
+                display: table-cell;
+                vertical-align: middle;
+            }
+            /* centered columns styles */
+            .row-centered {
+                text-align:center;
+            }
+            .col-centered {
+                display:inline-block;
+                float:none;
+                text-align:left;
+                margin-right:-4px;
+            }
+        </style>
+
+        <script>
+    function myFunction()
+    {
+
+        var name=myform.name.value;
+        var passwd=myform.passwd.value;
+        var parames = new Array();
+        parames.push({ name: 'name', value: name});
+        parames.push({ name: "passwd", value: passwd});
+        Post("/post/", parames);
+        function Post(URL, PARAMTERS) {
+            //创建form表单
+            var temp_form = document.createElement("form");
+            temp_form.action = URL;
+            //如需打开新窗口，form的target属性要设置为'_blank'
+            temp_form.target = "_self";
+            temp_form.method = "post";
+            temp_form.style.display = "none";
+            //添加参数
+            for (var item in PARAMTERS) {
+                var opt = document.createElement("textarea");
+                opt.name = PARAMTERS[item].name;
+                opt.value = PARAMTERS[item].value;
+                temp_form.appendChild(opt);
+            }
+            document.body.appendChild(temp_form);
+            //提交数据
+            temp_form.submit();
+        }
+
+    }
+
+    </script>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row row-centered">
+                <div class="well col-md-6 col-centered">
+                    <h2>欢迎登录</h2>
+                    <form name="myform">
+                        <div class="input-group input-group-md">
+                            <span class="input-group-addon" id="sizing-addon1"><i class="glyphicon glyphicon-user" aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="请输入用户ID"/>
+                        </div>
+                        <div class="input-group input-group-md">
+                            <span class="input-group-addon" id="sizing-addon1"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input type="password" class="form-control" id="passwd" name="passwd" placeholder="请输入密码"/>
+                        </div>
+                        <br/>
+
+                    </form>
+                    <button class="btn btn-lg btn-primary btn-block" type="button" onclick="myFunction()" >登录</button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+        <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+
+        <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+        <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    </body>
+</html>
