@@ -164,7 +164,10 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.test.html">
+  <component name="RunManager" selected="JavaScript Debug.monitor.html">
+    <configuration name="monitor.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/flask/templates/monitor.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="test.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/flask/templates/test.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -200,6 +203,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.monitor.html" />
         <item itemvalue="Flask server.Flask (app.py)" />
         <item itemvalue="JavaScript Debug.test.html" />
       </list>
@@ -227,12 +231,12 @@
       <workItem from="1555291789729" duration="3280000" />
       <workItem from="1555309835636" duration="2637000" />
       <workItem from="1555320462570" duration="6635000" />
-      <workItem from="1555400705899" duration="9715000" />
+      <workItem from="1555400705899" duration="10314000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85646000" />
+    <option name="totallyTimeSpent" value="86245000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
