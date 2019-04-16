@@ -5,7 +5,7 @@
     <script type="text/javascript" language="javascript">
    		function update() {
    			$.getJSON("/data/",function(data) {
-                $("#dbdata").html('<p>'+ data.db + data.date+'</p>');
+                $("#dbdata").html('<p>'+ data.db +" dB  "+ data.date+'</p>');
                 if(data.db > 0 && data.db <= 55)
                 {
 
@@ -52,15 +52,3 @@ Wait for data
 </p>
 
 </body>
-{#{% if u %}#}
-{#{#    {% for i in u %}#}
-{#{#      <span>db ={{ i[1]}}</span>#}
-{#{#      <span>date ={{ i[2]}}</span>#}
-{#{#        <meta http-equiv="refresh" content="10">#}
-{#{#        <p></p>#}
-{#{#    {% endfor %}#}
-{#{##}
-{#{#{% else %}#}
-{#{#  <h1>Hello World!</h1>#}
-{#{#   <td db="{{dbdata}}">{{dbdata}}</td>#}
-{#{#{% endif %}#}

@@ -1,99 +1,154 @@
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>用户登录</title>
+<!doctype html>
+<title>噪音监测</title>
+<head>
+    <script src="https://cdn.staticfile.org/jquery/2.0.0/jquery.min.js"></script>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .navbar-default {
+  background-color: #f3273d;
+  border-color: #f3273d;
+}
+.navbar-default .navbar-brand {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #f9f7fa;
+}
+.navbar-default .navbar-text {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #f9f7fa;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #f9f7fa;
+  background-color: #f3273d;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #f9f7fa;
+  background-color: #f3273d;
+}
+.navbar-default .navbar-toggle {
+  border-color: #f3273d;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #f3273d;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ecf0f1;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ecf0f1;
+}
+.navbar-default .navbar-link {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-link:hover {
+  color: #f9f7fa;
+}
 
-        <script src="https://cdn.staticfile.org/jquery/2.0.0/jquery.min.js"></script>
-        <!-- Bootstrap 核心 CSS 文件 -->
-        <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ecf0f1;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #f9f7fa;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #f9f7fa;
+    background-color: #f3273d;
+  }
+}
+    </style>
+    <script type="text/javascript" language="javascript">
+   		function update() {
+   			$.getJSON("/data/",function(data) {
+                $("#dbdata").html('<p>'+ data.db +" dB  "+ data.date+'</p>');
+                if(data.db > 0 && data.db <= 55)
+                {
 
-        <style>
-            /*web background*/
-            .container{
-                display:table;
-                height:100%;
-            }
+                    $("#if").html('<p>当前环境良好</p>');
+                }
+                else if(data.db > 55 && data.db <= 60)
+                {
 
-            .row{
-                display: table-cell;
-                vertical-align: middle;
-            }
-            /* centered columns styles */
-            .row-centered {
-                text-align:center;
-            }
-            .col-centered {
-                display:inline-block;
-                float:none;
-                text-align:left;
-                margin-right:-4px;
-            }
-        </style>
+                    $("#if").html('<p>当前环境噪声轻度污染</p>');
+                }
+                 else if(data.db > 60 && data.db <= 65)
+                {
 
-        <script>
-    function myFunction()
-    {
+                    $("#if").html('<p>当前环境噪声中度污染</p>');
+                }
+                  else
+                {
 
-        var name=myform.name.value;
-        var passwd=myform.passwd.value;
-        var parames = new Array();
-        parames.push({ name: 'name', value: name});
-        parames.push({ name: "passwd", value: passwd});
-        Post("/post/", parames);
-        function Post(URL, PARAMTERS) {
-            //创建form表单
-            var temp_form = document.createElement("form");
-            temp_form.action = URL;
-            //如需打开新窗口，form的target属性要设置为'_blank'
-            temp_form.target = "_self";
-            temp_form.method = "post";
-            temp_form.style.display = "none";
-            //添加参数
-            for (var item in PARAMTERS) {
-                var opt = document.createElement("textarea");
-                opt.name = PARAMTERS[item].name;
-                opt.value = PARAMTERS[item].value;
-                temp_form.appendChild(opt);
-            }
-            document.body.appendChild(temp_form);
-            //提交数据
-            temp_form.submit();
-        }
+                    $("#if").html('<p>当前环境噪声重度污染</p>');
+                }
 
-    }
 
-    </script>
-    </head>
+   			});
+   		}
+   		function timeDown() {
+   			setTimeout(function() {
+   			    update();
+   			    timeDown();
+   		    }, 1000)
+   		}
+   		$(document).ready(function() {
+   			timeDown()
 
-    <body>
-        <div class="container">
-            <div class="row row-centered">
-                <div class="well col-md-6 col-centered">
-                    <h2>欢迎登录</h2>
-                    <form name="myform">
-                        <div class="input-group input-group-md">
-                            <span class="input-group-addon" id="sizing-addon1"><i class="glyphicon glyphicon-user" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="请输入用户ID"/>
-                        </div>
-                        <div class="input-group input-group-md">
-                            <span class="input-group-addon" id="sizing-addon1"><i class="glyphicon glyphicon-lock"></i></span>
-                            <input type="password" class="form-control" id="passwd" name="passwd" placeholder="请输入密码"/>
-                        </div>
-                        <br/>
+        });
 
-                    </form>
-                    <button class="btn btn-lg btn-primary btn-block" type="button" onclick="myFunction()" >登录</button>
-                </div>
-            </div>
+</script>
+</head>
+<body>
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">噪音监测毕设</a>
         </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="搜索">
+                </div>
+                <button type="submit" class="btn btn-default">搜索</button>
+                </form>
+                <ul class="nav navbar-nav" id="mytab">
+                <li class="active">
+                    <a href="/">退出登录</a>
+                </li>
+
+                </ul>
+            </ul>
 
 
-        <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-        <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+</div>
 
-        <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-        <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    </body>
-</html>
+    </div>
+
+
+</nav>
+<p id="dbdata">
+Wait for data
+</p>
+<p id="if">
+
+</p>
+
+</body>

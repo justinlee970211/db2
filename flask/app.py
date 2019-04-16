@@ -46,7 +46,7 @@ def flash():
     u = cursor.fetchall()
 
     a = u[-1]
-    dbdata = {'db': a[1], 'date':a[2]}
+    dbdata = {'db': float(a[1].split()[0]), 'date':a[2]}
     return jsonify(dbdata)
 
 
