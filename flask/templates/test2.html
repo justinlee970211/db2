@@ -143,57 +143,7 @@
 
 
 </script>
-
-
-
-</head>
-<body>
-<nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">噪音监测毕设</a>
-        </div>
-        <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav navbar-right">
-
-                <ul class="nav navbar-nav" id="mytab">
-                <li class="active">
-                    <a href="/">退出登录</a>
-                </li>
-
-                </ul>
-            </ul>
-
-
-</div>
-
-    </div>
-
-
-</nav>
-
-<div class="row">
-    <div class="col-md-6">
-        <p id="dbdata">
-            <font size="5" face="arial" color="red">
-                Wait for data
-            </font>
-        </p>
-    </div>
-</div>
-
-<div class="row">
-   <div class="col-md-6 col-md-offset-6"></div>
-
-</div>
-<p id="if">
-
-</p>
-
-<script src="http://libs.baidu.com/jquery/1.7.2/jquery.min.js"></script>
-<script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
-<div class="flex-item2"  id="livechart" style="position:absolute;right:100px;top:50px;">
-	<script>
+<script id="livechart" class="flex-item2">
 	        require.config({
             paths: {
                 echarts: 'http://echarts.baidu.com/build/dist'
@@ -218,7 +168,7 @@
     	    					      	},
     					    },
     					    tooltip : {
-    					        formatter: "{a} <br/>{b} : {c}dB"
+    					        formatter: "{a} <br/>{b} : {c}%"
     					    },
 
     					    series : [
@@ -278,5 +228,55 @@
         );
 
 	</script>
+
+
+</head>
+<body>
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">噪音监测毕设</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+
+                <ul class="nav navbar-nav" id="mytab">
+                <li class="active">
+                    <a href="/">退出登录</a>
+                </li>
+
+                </ul>
+            </ul>
+
+
+</div>
+
+    </div>
+
+
+</nav>
+
+<div class="row">
+    <div class="col-md-6">
+        <p id="dbdata">
+            <font size="5" face="arial" color="red">
+                Wait for data
+            </font>
+        </p>
+    </div>
+</div>
+
+<div class="row">
+   <div class="col-md-6 col-md-offset-6"></div>
+
+</div>
+<p id="if">
+
+</p>
+
+<script src="http://libs.baidu.com/jquery/1.7.2/jquery.min.js"></script>
+<script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+<div class="flex-item2"  id="livechart" style="position:absolute;right:100px;top:50px;">
+
 </div>
 </body>

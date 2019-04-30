@@ -1,83 +1,110 @@
-<!doctype html>
+
 <title>噪音监测</title>
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://cdn.staticfile.org/jquery/2.0.0/jquery.min.js"></script>
+    <script src="/static/js/raphael.2.1.0.min.js"></script>
+    <script src="/static/js/justgage.1.0.1.min.js"></script>
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .navbar-default {
-  background-color: #f3273d;
-  border-color: #f3273d;
-}
-.navbar-default .navbar-brand {
-  color: #ecf0f1;
-}
-.navbar-default .navbar-brand:hover,
-.navbar-default .navbar-brand:focus {
-  color: #f9f7fa;
-}
-.navbar-default .navbar-text {
-  color: #ecf0f1;
-}
-.navbar-default .navbar-nav > li > a {
-  color: #ecf0f1;
-}
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-  color: #f9f7fa;
-}
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:hover,
-.navbar-default .navbar-nav > .active > a:focus {
-  color: #f9f7fa;
-  background-color: #f3273d;
-}
-.navbar-default .navbar-nav > .open > a,
-.navbar-default .navbar-nav > .open > a:hover,
-.navbar-default .navbar-nav > .open > a:focus {
-  color: #f9f7fa;
-  background-color: #f3273d;
-}
-.navbar-default .navbar-toggle {
-  border-color: #f3273d;
-}
-.navbar-default .navbar-toggle:hover,
-.navbar-default .navbar-toggle:focus {
-  background-color: #f3273d;
-}
-.navbar-default .navbar-toggle .icon-bar {
-  background-color: #ecf0f1;
-}
-.navbar-default .navbar-collapse,
-.navbar-default .navbar-form {
-  border-color: #ecf0f1;
-}
-.navbar-default .navbar-link {
-  color: #ecf0f1;
-}
-.navbar-default .navbar-link:hover {
-  color: #f9f7fa;
-}
+        .flex-item2 {
+		width: 600px;
+		height: 400px;
+		}
 
-@media (max-width: 767px) {
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: #ecf0f1;
-  }
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #f9f7fa;
-  }
-  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
-  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
-  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #f9f7fa;
-    background-color: #f3273d;
-  }
-}
+
+        .row{
+            margin-bottom: 20px;
+        }
+        .row .row{
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+
+        [class*="col-"]{
+            padding-top: 15px;
+            padding-bottom: 15px;
+            background-color: white;
+
+        }
+        .navbar-default {
+      background-color: #f3273d;
+      border-color: #f3273d;
+        }
+        .navbar-default .navbar-brand {
+          color: #ecf0f1;
+        }
+        .navbar-default .navbar-brand:hover,
+        .navbar-default .navbar-brand:focus {
+          color: #f9f7fa;
+        }
+        .navbar-default .navbar-text {
+          color: #ecf0f1;
+        }
+        .navbar-default .navbar-nav > li > a {
+          color: #ecf0f1;
+        }
+        .navbar-default .navbar-nav > li > a:hover,
+        .navbar-default .navbar-nav > li > a:focus {
+          color: #f9f7fa;
+        }
+        .navbar-default .navbar-nav > .active > a,
+        .navbar-default .navbar-nav > .active > a:hover,
+        .navbar-default .navbar-nav > .active > a:focus {
+          color: #f9f7fa;
+          background-color: #f3273d;
+        }
+        .navbar-default .navbar-nav > .open > a,
+        .navbar-default .navbar-nav > .open > a:hover,
+        .navbar-default .navbar-nav > .open > a:focus {
+          color: #f9f7fa;
+          background-color: #f3273d;
+        }
+        .navbar-default .navbar-toggle {
+          border-color: #f3273d;
+        }
+        .navbar-default .navbar-toggle:hover,
+        .navbar-default .navbar-toggle:focus {
+          background-color: #f3273d;
+        }
+        .navbar-default .navbar-toggle .icon-bar {
+          background-color: #ecf0f1;
+        }
+        .navbar-default .navbar-collapse,
+        .navbar-default .navbar-form {
+          border-color: #ecf0f1;
+        }
+        .navbar-default .navbar-link {
+          color: #ecf0f1;
+        }
+        .navbar-default .navbar-link:hover {
+          color: #f9f7fa;
+        }
+
+        @media (max-width: 767px) {
+          .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+            color: #ecf0f1;
+          }
+          .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+          .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+            color: #f9f7fa;
+          }
+          .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+          .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+          .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+            color: #f9f7fa;
+            background-color: #f3273d;
+          }
+      }
     </style>
     <script type="text/javascript" language="javascript">
+
    		function update() {
    			$.getJSON("/data/",function(data) {
                 $("#dbdata").html('<p>'+ data.db +" dB  "+ data.date+'</p>');
+                document.getElementById("dbdata").style.fontSize="40px";
+                document.getElementById("if").style.fontSize="40px";
                 if(data.db > 0 && data.db <= 55)
                 {
 
@@ -113,7 +140,12 @@
 
         });
 
+
+
 </script>
+
+
+
 </head>
 <body>
 <nav class="navbar navbar-default" role="navigation">
@@ -123,12 +155,7 @@
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
-                <form class="navbar-form navbar-left" role="search">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="搜索">
-                </div>
-                <button type="submit" class="btn btn-default">搜索</button>
-                </form>
+
                 <ul class="nav navbar-nav" id="mytab">
                 <li class="active">
                     <a href="/">退出登录</a>
@@ -144,11 +171,112 @@
 
 
 </nav>
-<p id="dbdata">
-Wait for data
-</p>
+
+<div class="row">
+    <div class="col-md-6">
+        <p id="dbdata">
+            <font size="5" face="arial" color="red">
+                Wait for data
+            </font>
+        </p>
+    </div>
+</div>
+
+<div class="row">
+   <div class="col-md-6 col-md-offset-6"></div>
+
+</div>
 <p id="if">
 
 </p>
 
+<script src="http://libs.baidu.com/jquery/1.7.2/jquery.min.js"></script>
+<script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+<div class="flex-item2"  id="livechart" style="position:absolute;right:100px;top:50px;">
+	<script>
+	        require.config({
+            paths: {
+                echarts: 'http://echarts.baidu.com/build/dist'
+            }
+        });
+        require(
+                [
+                    'echarts',
+                    'echarts/chart/gauge' // 按需加载图表模块，
+                ],
+                function (ec) {
+                    // 基于准备好的dom，初始化echarts图表
+                    var myChart = ec.init(document.getElementById('livechart'));
+    				var option = {
+    						title : {
+    					        text: '分贝表',
+    					       // subtext: '分贝参数',
+    					        textStyle: {
+    	    					        	fontWeight: 'normal',              //标题颜色
+    	    					        	color: '#ffffff',
+    	    					        	fontSize: 20,
+    	    					      	},
+    					    },
+    					    tooltip : {
+    					        formatter: "{a} <br/>{b} : {c}dB"
+    					    },
+
+    					    series : [
+    					        {
+    					            name:'分贝',
+    					            type:'gauge',
+    					            center : ['70%', '50%'],
+    					            radius : '90%',
+    					            min:0,
+    					            max:130,
+    					            startAngle:210,
+    					            endAngle:-30,
+    					            title : {
+    					                textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
+    					                    fontWeight: 'bolder',
+    					                    fontSize: 30,
+    					                    fontStyle: 'italic',
+    					                    color: '#ffffff',
+
+    					                }
+    					            },
+    					            detail : {formatter:'{value}',
+    					            	textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
+    					                    color: 'white',
+    					                    fontWeight: 'bolder',
+    					                    fontSize: 50,
+    					                }
+    					            },
+    					            data:[{value: 0,
+    					            	name: 'dB',
+    					            	}],
+    					            axisLine: {            // 坐标轴线
+    					                lineStyle: {       // 属性lineStyle控制线条样式
+    					                    color: [[0.2, '#228b22'],[0.4, '#48b'],[0.7, '#FFA500'],[1, '#ff4500']],
+    					                    width: 10
+    					                },
+    					            },
+    					        }
+    					    ]
+    					};
+
+    				//定义好图表样式后，用jQuery的get获取Jason数据填入
+    				var timeTicket;
+ 					clearInterval(timeTicket);
+ 					timeTicket = setInterval(function (){
+    				$.get("/data/").done (function(data){
+        	  		option.series[0].data[0].value = data.db;
+        	  		myChart.setOption(option, true);
+    				},1000);//设置调用间隔时间
+ 				});
+
+
+        	myChart.setOption(option);
+
+
+                }
+        );
+
+	</script>
+</div>
 </body>

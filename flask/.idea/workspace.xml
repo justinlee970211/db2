@@ -9,7 +9,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/flask$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1555422710891" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/flask$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1556592687835" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="flask" />
@@ -19,8 +19,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="47" column="13" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
+            <state relative-caret-position="1292">
+              <caret line="75" selection-start-line="75" selection-end-line="78" selection-end-column="40" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -28,29 +28,43 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/test.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="74" column="1" selection-start-line="74" selection-start-column="1" selection-end-line="74" selection-end-column="1" />
+            <state relative-caret-position="133">
+              <caret line="226" column="49" lean-forward="true" selection-end-line="281" selection-end-column="7" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/monitor.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="313">
+              <caret line="281" column="7" selection-start-line="281" selection-start-column="7" selection-end-line="281" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/test2.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2755">
+              <caret line="145" column="41" selection-start-line="145" selection-start-column="41" selection-end-line="145" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/js/justgage.1.0.1.js">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/bootstrap/css/bootstrap.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3591">
-              <caret line="4493" column="1" lean-forward="true" selection-start-line="4493" selection-start-column="1" selection-end-line="4493" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/bootstrap/css/bootstrap-theme.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="79">
-              <caret line="338" column="65" selection-start-line="338" selection-start-column="58" selection-end-line="338" selection-end-column="65" />
+            <state relative-caret-position="85367">
+              <caret line="4493" column="1" selection-start-line="4493" selection-start-column="1" selection-end-line="4493" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -58,17 +72,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="100" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/monitor.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" column="77" lean-forward="true" selection-start-line="7" selection-start-column="77" selection-end-line="7" selection-end-column="77" />
+            <state relative-caret-position="1539">
+              <caret line="81" column="47" selection-start-line="81" selection-start-column="47" selection-end-line="81" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -92,18 +97,20 @@
         <option value="$PROJECT_DIR$/config.py" />
         <option value="$PROJECT_DIR$/templates/hellow.html" />
         <option value="$PROJECT_DIR$/templates/login.html" />
-        <option value="$PROJECT_DIR$/app.py" />
-        <option value="$PROJECT_DIR$/templates/monitor.html" />
         <option value="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/static/bootstrap/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/static/bootstrap/css/bootstrap-theme.css" />
+        <option value="$PROJECT_DIR$/app.py" />
+        <option value="$PROJECT_DIR$/templates/test2.html" />
         <option value="$PROJECT_DIR$/templates/test.html" />
+        <option value="$PROJECT_DIR$/templates/monitor.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="705" />
-    <option name="width" value="980" />
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
+    <option name="width" value="979" />
     <option name="height" value="1040" />
   </component>
   <component name="ProjectView">
@@ -128,14 +135,12 @@
               <item name="flask" type="b2602c69:ProjectViewProjectNode" />
               <item name="flask" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="flask" type="b2602c69:ProjectViewProjectNode" />
               <item name="flask" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="flask" type="b2602c69:ProjectViewProjectNode" />
@@ -164,8 +169,11 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.monitor.html">
+  <component name="RunManager" selected="Flask server.Flask (app.py)">
     <configuration name="monitor.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/flask/templates/monitor.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="test2.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/flask/templates/test2.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="test.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/flask/templates/test.html" useBuiltInWebServerPort="true">
@@ -203,9 +211,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.monitor.html" />
         <item itemvalue="Flask server.Flask (app.py)" />
+        <item itemvalue="JavaScript Debug.test2.html" />
         <item itemvalue="JavaScript Debug.test.html" />
+        <item itemvalue="JavaScript Debug.monitor.html" />
       </list>
     </recent_temporary>
   </component>
@@ -231,12 +240,17 @@
       <workItem from="1555291789729" duration="3280000" />
       <workItem from="1555309835636" duration="2637000" />
       <workItem from="1555320462570" duration="6635000" />
-      <workItem from="1555400705899" duration="10314000" />
+      <workItem from="1555400705899" duration="10609000" />
+      <workItem from="1556426602509" duration="2036000" />
+      <workItem from="1556431931701" duration="1982000" />
+      <workItem from="1556436113418" duration="2745000" />
+      <workItem from="1556520211032" duration="15918000" />
+      <workItem from="1556591802347" duration="707000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86245000" />
+    <option name="totallyTimeSpent" value="109928000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -251,12 +265,12 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49928468" visible="true" weight="0.17962466" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49928468" visible="true" weight="0.17091152" />
       <window_info id="Structure" order="1" sideWeight="0.5010526" side_tool="true" weight="0.14209116" />
       <window_info id="Favorites" order="2" sideWeight="0.5007153" side_tool="true" weight="0.2932227" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33380482" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32531825" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -279,69 +293,61 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/config.py" />
-    <entry file="file://$PROJECT_DIR$/static/html/db.html">
+    <entry file="file://$PROJECT_DIR$/static/html/db.html" />
+    <entry file="file://$PROJECT_DIR$/static/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+    <entry file="file://$PROJECT_DIR$/static/bootstrap-3.3.7-dist/css/bootstrap.css" />
+    <entry file="file://$PROJECT_DIR$/static/bootstrap/css/bootstrap-theme.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="6" selection-end-column="11" />
+        <state relative-caret-position="6422">
+          <caret line="338" column="65" selection-start-line="338" selection-start-column="58" selection-end-line="338" selection-end-column="65" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="47" column="13" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
+        <state relative-caret-position="1292">
+          <caret line="75" selection-start-line="75" selection-end-line="78" selection-end-column="40" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <entry file="file://$PROJECT_DIR$/templates/test2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
-          <caret line="4" column="73972" selection-start-line="4" selection-start-column="73972" selection-end-line="4" selection-end-column="73972" />
+        <state relative-caret-position="2755">
+          <caret line="145" column="41" selection-start-line="145" selection-start-column="41" selection-end-line="145" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/bootstrap-3.3.7-dist/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="4570" column="1" lean-forward="true" selection-start-line="4494" selection-end-line="4570" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/monitor.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="77" lean-forward="true" selection-start-line="7" selection-start-column="77" selection-end-line="7" selection-end-column="77" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/static/js/justgage.1.0.1.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/static/bootstrap/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3591">
-          <caret line="4493" column="1" lean-forward="true" selection-start-line="4493" selection-start-column="1" selection-end-line="4493" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/bootstrap/css/bootstrap-theme.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="338" column="65" selection-start-line="338" selection-start-column="58" selection-end-line="338" selection-end-column="65" />
+        <state relative-caret-position="85367">
+          <caret line="4493" column="1" selection-start-line="4493" selection-start-column="1" selection-end-line="4493" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="100" />
+        <state relative-caret-position="1539">
+          <caret line="81" column="47" selection-start-line="81" selection-start-column="47" selection-end-line="81" selection-end-column="47" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="74" column="1" selection-start-line="74" selection-start-column="1" selection-end-line="74" selection-end-column="1" />
+        <state relative-caret-position="133">
+          <caret line="226" column="49" lean-forward="true" selection-end-line="281" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/monitor.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="281" column="7" selection-start-line="281" selection-start-column="7" selection-end-line="281" selection-end-column="7" />
         </state>
       </provider>
     </entry>

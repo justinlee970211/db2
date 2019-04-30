@@ -73,7 +73,10 @@ def dbpost():
 def bootstrap():
     return render_template('test.html')
 
+@app.route('/test2/')
 
+def bootstrap2():
+    return render_template('test2.html')
 
 if __name__ == '__main__':
 
