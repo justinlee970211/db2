@@ -11,7 +11,7 @@ import random
 app = Flask(__name__)
 
 
-@app.route('/monitor/%2520%25E8%258E%25B7%25E5%258F%2596%25E8%25B7%25B3%25E8%25BD%25AC%25E4%25B9%258B%25E5%2589%258D%25E7%259A%2584%25E9%25A1%25B5%25E9%259D%25A2&rsv_pq=c55d03710000b37e&rsv_t=2d7cMpKaY1KiWYx%2Bz5t1b6GhIKMeXL1TJ5SqOd7oVlEOC8FgssuhC%2FEMl7s&rqlang=cn&rsv_enter=0&inputT=2051&rsv_sug3=56&rsv_sug1=12&rsv_sug7=000&rsv_sug2=0&rsv_sug4=2926&rsv_sug=1/')
+@app.route('/monitor/%2520%25E8%258E%25B7_sug=1/')
 
 def index():
     conn = pymysql.connect(
@@ -73,10 +73,10 @@ def dbpost():
 def bootstrap():
     return render_template('test.html')
 
-@app.route('/test2/')
+@app.route('/gauge/')
 
 def bootstrap2():
-    return render_template('test2.html')
+    return render_template('gauge.html')
 
 if __name__ == '__main__':
 

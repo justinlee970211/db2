@@ -3,9 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="https://cdn.staticfile.org/jquery/2.0.0/jquery.min.js"></script>
-    <script src="/static/js/raphael.2.1.0.min.js"></script>
-    <script src="/static/js/justgage.1.0.1.min.js"></script>
+
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .flex-item2 {
@@ -98,7 +96,16 @@
           }
       }
     </style>
-    <script type="text/javascript" language="javascript">
+
+
+
+
+</head>
+<body>
+<script src="https://cdn.staticfile.org/jquery/2.0.0/jquery.min.js"></script>
+    <script src="/static/js/raphael.2.1.0.min.js"></script>
+    <script src="/static/js/justgage.1.0.1.min.js"></script>
+<script type="text/javascript" language="javascript">
 
    		function update() {
    			$.getJSON("/data/",function(data) {
@@ -143,17 +150,18 @@
 
 
 </script>
-
-
-
-</head>
-<body>
 <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand" href="#">噪音监测毕设</a>
         </div>
         <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav" id="mytab">
+                <li class="active">
+                    <a href="/gauge/">仪表盘显示</a>
+                </li>
+
+                </ul>
             <ul class="nav navbar-nav navbar-right">
 
                 <ul class="nav navbar-nav" id="mytab">
@@ -190,93 +198,6 @@
 
 </p>
 
-<script src="http://libs.baidu.com/jquery/1.7.2/jquery.min.js"></script>
-<script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
-<div class="flex-item2"  id="livechart" style="position:absolute;right:100px;top:50px;">
-	<script>
-	        require.config({
-            paths: {
-                echarts: 'http://echarts.baidu.com/build/dist'
-            }
-        });
-        require(
-                [
-                    'echarts',
-                    'echarts/chart/gauge' // 按需加载图表模块，
-                ],
-                function (ec) {
-                    // 基于准备好的dom，初始化echarts图表
-                    var myChart = ec.init(document.getElementById('livechart'));
-    				var option = {
-    						title : {
-    					        text: '分贝表',
-    					       // subtext: '分贝参数',
-    					        textStyle: {
-    	    					        	fontWeight: 'normal',              //标题颜色
-    	    					        	color: '#ffffff',
-    	    					        	fontSize: 20,
-    	    					      	},
-    					    },
-    					    tooltip : {
-    					        formatter: "{a} <br/>{b} : {c}dB"
-    					    },
-
-    					    series : [
-    					        {
-    					            name:'分贝',
-    					            type:'gauge',
-    					            center : ['70%', '50%'],
-    					            radius : '90%',
-    					            min:0,
-    					            max:130,
-    					            startAngle:210,
-    					            endAngle:-30,
-    					            title : {
-    					                textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
-    					                    fontWeight: 'bolder',
-    					                    fontSize: 30,
-    					                    fontStyle: 'italic',
-    					                    color: '#ffffff',
-
-    					                }
-    					            },
-    					            detail : {formatter:'{value}',
-    					            	textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
-    					                    color: 'white',
-    					                    fontWeight: 'bolder',
-    					                    fontSize: 50,
-    					                }
-    					            },
-    					            data:[{value: 0,
-    					            	name: 'dB',
-    					            	}],
-    					            axisLine: {            // 坐标轴线
-    					                lineStyle: {       // 属性lineStyle控制线条样式
-    					                    color: [[0.2, '#228b22'],[0.4, '#48b'],[0.7, '#FFA500'],[1, '#ff4500']],
-    					                    width: 10
-    					                },
-    					            },
-    					        }
-    					    ]
-    					};
-
-    				//定义好图表样式后，用jQuery的get获取Jason数据填入
-    				var timeTicket;
- 					clearInterval(timeTicket);
- 					timeTicket = setInterval(function (){
-    				$.get("/data/").done (function(data){
-        	  		option.series[0].data[0].value = data.db;
-        	  		myChart.setOption(option, true);
-    				},1000);//设置调用间隔时间
- 				});
 
 
-        	myChart.setOption(option);
-
-
-                }
-        );
-
-	</script>
-</div>
 </body>
