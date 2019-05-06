@@ -78,6 +78,11 @@ def bootstrap():
 def bootstrap2():
     return render_template('gauge.html')
 
+@app.route('/test3/')
+
+def bootstrap3():
+    return render_template('test3.html')
+
 if __name__ == '__main__':
 
     app.run(host='0.0.0.0', port=5000)
